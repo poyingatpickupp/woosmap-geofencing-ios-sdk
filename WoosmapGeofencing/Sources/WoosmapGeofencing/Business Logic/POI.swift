@@ -74,7 +74,10 @@ public class POIs {
                             
                             if let contact = properties["contact"] as? [String: String] {
                                 for (key, value) in contact {
-                                    poi.contact = (poi.contact ?? "") + key + "=" + value + "_"
+                                    var tmpContact = poi.contact ?? ""
+                                    tmpContact = tmpContact + key + "="
+                                    tmpContact = tmpContact + value + "_"
+                                    poi.contact = tmpContact
                                 }
                             }
                             
